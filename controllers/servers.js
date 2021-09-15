@@ -10,6 +10,16 @@ export const getAll = (req, res) => {
 }
 
 export const create = (req, res) => {
+    const newServer = {
+        id: Date.now().toString(),
+        ...req.body
+    }
+    servers.push(newServer)
     console.log(req.body)
-    res.status(201).json({})
+    res.status(201).json(newServer)
+}
+
+export const remove = (req, res) => {
+    console.log('ID', req.params.id)
+    res.json({})
 }

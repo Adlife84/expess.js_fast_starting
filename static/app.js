@@ -21,7 +21,7 @@ const App = {
            this.name = '' 
            const newServer = await res.json()
            console.log(newServer)
-
+           this.servers.push(newServer)
        }
    },
    async mounted() {
