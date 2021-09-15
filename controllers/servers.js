@@ -8,3 +8,8 @@ let servers = [
 export const getAll = (req, res) => {
     res.status(200).json(servers)
 }
+
+export const create = (req, res) => {
+    console.log(req.body)
+    res.status(201).json({})
+}

@@ -9,6 +9,13 @@
         <h1><%= title %></h1>
 
         <div id="app">
+            <form @submit.prevent="createServer">
+                <div class="mb-3">
+                    <input class="form-control" type="text" v-model="name">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+
             <div class="spinner-border" role="status" v-if="servers.length === 0">
                 <span class="visually-hidden">Loading...</span>
             </div>
