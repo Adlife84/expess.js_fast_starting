@@ -7,6 +7,21 @@
     <%- include('./partials/navbar'); %>
     <div class="container">
         <h1><%= title %></h1>
+
+        <div id="app">
+            <div class="spinner-border" role="status" v-if="servers.length === 0">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <ul class="list-group" v-else>
+                <li class="list-group-item" v-for="server in servers">
+                    {{ server.name }}
+                    <strong>{{ server.status }}</strong>
+                </li>
+            </ul>
+        </div>
     </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/app.js"></script>
 </body>
 </html>
