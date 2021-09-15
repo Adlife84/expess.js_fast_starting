@@ -13,10 +13,10 @@ const App = {
            }
            const res = await fetch('/api/server', {
                method: 'POST',
-               header: {
+               headers: {
                    'Content-Type': 'application/json'
                },
-               body: JSON.stringify()
+               body: JSON.stringify(data)
            })
            this.name = '' 
            const newServer = await res.json()
