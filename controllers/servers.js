@@ -21,5 +21,6 @@ export const create = (req, res) => {
 
 export const remove = (req, res) => {
     console.log('ID', req.params.id)
-    res.json({})
+    servers = servers.filter(s => s.id !== req.params.id)
+    res.json({message: 'Server has been removed.'})
 }

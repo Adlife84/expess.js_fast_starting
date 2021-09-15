@@ -6,6 +6,10 @@ const App = {
        }
    },
    methods: {
+       async remove(id) {
+           await fetch(`/api/server/${id}`, {method: 'DELETE'})
+           this.servers = this.servers.filter(s => s.id !== id)
+       },
        async createServer() {
            const data = {
                name: this.name,
